@@ -1,221 +1,547 @@
 <!DOCTYPE html>
-<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventify</title>
 
-  <title>My Profile - Arfin</title>
-
-  <link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
 
     body{
-      background: #f4f7fc;
-      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6f9;
+      font-family: Arial, sans-serif;
     }
 
     .navbar{
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      background-color: #0d6efd;
     }
 
-    .hero{
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: linear-gradient(to right, #007bff, #00c6ff);
-      color: white;
-      padding: 40px;
-    }
-
-    .hero img{
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid white;
-      margin-bottom: 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
-
-    .hero h1{
-      font-size: 50px;
+    .navbar-brand,
+    .nav-link{
+      color: white !important;
       font-weight: bold;
     }
 
-    .hero p{
-      font-size: 20px;
-      margin-top: 15px;
-    }
+    .hero-section{
+      background: linear-gradient(
+        rgba(13,110,253,0.7),
+        rgba(13,110,253,0.7)
+      ),
+      url('https://images.unsplash.com/photo-1511578314322-379afb476865');
 
-    .btn-custom{
-      margin-top: 20px;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 18px;
-      transition: 0.3s;
-    }
-
-    .btn-custom:hover{
-      transform: scale(1.05);
-    }
-
-    .info-section{
-      margin-top: -80px;
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
     }
 
     .card{
       border: none;
       border-radius: 15px;
-      transition: 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
 
     .card:hover{
-      transform: translateY(-10px);
+      transform: translateY(-5px);
+      transition: 0.3s;
     }
-    
 
+    .custom-btn{
+      border-radius: 30px;
+      padding: 10px 25px;
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer{
-      margin-top: 50px;
-      background: #007bff;
+      background-color: #0d6efd;
       color: white;
-      padding: 15px;
       text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    h2, h3{
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media(max-width:768px){
+
+      .hero-section{
+        height: 60vh;
+        padding: 20px;
+      }
+
+      h1{
+        font-size: 30px;
+      }
+
     }
 
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
 
-    <div class="container">
+<nav class="navbar navbar-expand-lg">
 
-      <a class="navbar-brand font-weight-bold" href="#">
-        My Profile
-      </a>
-  
+  <div class="container">
 
-      <div class="collapse navbar-collapse" id="menu">
+    <a class="navbar-brand" href="#">
+      Eventify
+    </a>
 
-        <ul class="navbar-nav ml-auto">
+    <button class="navbar-toggler bg-light"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav">
 
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">
-              Home
-            </a>
-          </li>
+      <span class="navbar-toggler-icon"></span>
 
-          <li class="nav-item">
-            <a class="nav-link" href="makanan kesukaan.html">
-              Makanan
-            </a>
-          </li>
+    </button>
 
-          <li class="nav-item">
-            <a class="nav-link" href="vidio kampus.html">
-              Video
-            </a>
-          </li>
+    <div class="collapse navbar-collapse" id="navbarNav">
 
-          <li class="nav-item">
-            <a class="nav-link" href="kontak.html">
-              Kontak
-            </a>
-          </li>
+      <ul class="navbar-nav ms-auto">
 
-        </ul>
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#form">Form</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#table">Table</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+
+<section id="home"
+class="hero-section d-flex align-items-center text-center text-white">
+
+  <div class="container">
+
+    <h1 class="display-4 fw-bold">
+      Selamat Datang di Eventify
+    </h1>
+
+    <p class="lead">
+      Aplikasi Event Organizer Berbasis <a href="https://www.google.com">web</a> 
+      
+    </p>
+
+    <button class="btn btn-warning btn-lg custom-btn">
+      Explore
+    </button>
+
+  </div>
+
+</section>
+
+<section class="container mt-5">
+
+  <h2 class="text-center mb-4">
+    Dashboard Eventify
+  </h2>
+
+  <div class="row">
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card p-4 text-center">
+
+        <h3>0</h3>
+        <p>Total Event</p>
 
       </div>
 
     </div>
 
-  </nav>
+    <div class="col-md-4 mb-3">
 
-  <section class="hero">
+      <div class="card p-4 text-center">
 
-    <div class="container">
-
-      <img src="https://i.imgur.com/6VBx3io.png" alt="Foto Profil">
-
-      <h1>Halo, Saya Arfin</h1>
-
-      <p>
-        Mahasiswa Teknik Informatika <br>
-        Universitas Trunojoyo Madura
-      </p>
-
-      <a href="kontak.html" class="btn btn-light btn-custom">
-         Hubungi Saya
-      </a>
-
-    </div>
-
-  </section>
-
-  <section class="container info-section">
-
-    <div class="row text-center">
-
-      <div class="col-md-4 mb-4">
-
-        <div class="card p-4">
-
-
-          <h4>hobi</h4>
-
-          <p>
-            Saya suka bermain musik dan olahraga
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="col-md-4 mb-4">
-
-        <div class="card p-4">
-
-          <h4>Teknologi</h4>
-
-          <p>
-            tertarik sama teknologi web
-          </p>
-
-        </div>
-
-      </div>
-
-      <div class="col-md-4 mb-4">
-
-        <div class="card p-4">
-
-
-          <h4>Mahasiswa</h4>
-
-          <p>
-            aktif sebagai mahasiswa di universitas trunojoyo madura
-          </p>
-
-        </div>
+        <h3>0</h3>
+        <p>Total Peserta</p>
 
       </div>
 
     </div>
 
-  </section>
+    <div class="col-md-4 mb-3">
 
-  <footer>
-    <p> 2026 Arfin | page line</p>
-  </footer>
+      <div class="card p-4 text-center">
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <h3>Wedding Expo</h3>
+        <p>Upcoming Event</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="form" class="container mt-5">
+
+  <div class="card p-4">
+
+    <h3 class="mb-4">
+      Form Tambah Event
+    </h3>
+
+    <form>
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <label>Nama Client</label>
+
+          <input type="text"
+          class="form-control"
+          placeholder="Masukkan nama client">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <label>Tanggal Acara</label>
+
+          <input type="date"
+          class="form-control">
+
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-6 mb-3">
+
+          <label>Lokasi</label>
+
+          <input type="text"
+          class="form-control"
+          placeholder="Masukkan lokasi acara">
+
+        </div>
+
+        <div class="col-md-6 mb-3">
+
+          <label>Jenis Acara</label>
+
+          <select class="form-control">
+
+            <option>Wedding</option>
+            <option>Seminar</option>
+            <option>Workshop</option>
+            <option>Ulang Tahun</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label>Jumlah Undangan</label>
+
+        <input type="number"
+        class="form-control"
+        id="jumlahUndangan"
+        placeholder="Jumlah undangan">
+
+      </div>
+
+      <div class="mb-3">
+
+        <label>Paket Menu Makanan</label>
+
+        <select class="form-control"
+        id="paketMenu">
+
+          <option value="25000">
+            Paket Basic - 25.000
+          </option>
+
+          <option value="50000">
+            Paket Premium - 50.000
+          </option>
+
+          <option value="75000">
+            Paket VIP - 75.000
+          </option>
+
+        </select>
+
+      </div>
+
+      <label class="mb-2">
+        Fasilitas Tambahan
+      </label>
+
+      <div class="form-check">
+
+        <input class="form-check-input fasilitas"
+        type="checkbox"
+        value="3000000">
+
+        <label class="form-check-label">
+          Panggung (+3.000.000)
+        </label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input fasilitas"
+        type="checkbox"
+        value="2000000">
+
+        <label class="form-check-label">
+          Audio (+2.000.000)
+        </label>
+
+      </div>
+
+      <div class="form-check">
+
+        <input class="form-check-input fasilitas"
+        type="checkbox"
+        value="2500000">
+
+        <label class="form-check-label">
+          Video (+2.500.000)
+        </label>
+
+      </div>
+
+      <div class="form-check mb-3">
+
+        <input class="form-check-input fasilitas"
+        type="checkbox"
+        value="4000000">
+
+        <label class="form-check-label">
+          Hiburan (+4.000.000)
+        </label>
+
+      </div>
+
+      <div class="mb-3">
+
+        <label>Total Biaya</label>
+
+        <input type="text"
+        class="form-control"
+        id="totalBiaya"
+        placeholder="Rp 0"
+        readonly>
+
+      </div>
+
+      <button type="submit"
+      class="btn btn-primary custom-btn">
+
+        Simpan Event
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>
+
+<section id="table" class="container mt-5">
+
+  <div class="card p-4">
+
+    <h3 class="mb-4">
+      Data Peserta
+    </h3>
+
+    <table class="table table-bordered table-striped">
+
+      <thead class="table-primary">
+
+        <tr>
+
+          <th>No</th>
+          <th>Nama</th>
+          <th>Email</th>
+          <th>Event</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</section>
+
+<section class="container mt-5">
+
+  <h2 class="text-center mb-4">
+    Fitur Eventify
+  </h2>
+
+  <div class="row">
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card p-4 text-center">
+
+        <h4>Manajemen Event</h4>
+
+        <p>
+          Mengelola event dengan mudah dan cepat.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card p-4 text-center">
+
+        <h4>Registrasi Peserta</h4>
+
+        <p>
+          Pendaftaran peserta secara online.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-4 mb-3">
+
+      <div class="card p-4 text-center">
+
+        <h4>Laporan Data</h4>
+
+        <p>
+          Menampilkan data event dan peserta.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="about" class="container mt-5">
+
+  <div class="card p-4">
+
+    <h3>About Eventify</h3>
+
+    <p>
+      Eventify adalah aplikasi event organizer
+      berbasis web untuk membantu pengelolaan
+      event dan peserta menjadi lebih cepat,
+      modern, dan rapi.
+    </p>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <p>
+    © 2026 Eventify - Project Dasar Pemrograman Web
+  </p>
+
+</footer>
+
+<script>
+
+  const jumlahUndangan =
+    document.getElementById("jumlahUndangan");
+
+  const paketMenu =
+    document.getElementById("paketMenu");
+
+  const fasilitas =
+    document.querySelectorAll(".fasilitas");
+
+  const totalBiaya =
+    document.getElementById("totalBiaya");
+
+  jumlahUndangan.addEventListener(
+    "input",
+    hitungTotal
+  );
+
+  paketMenu.addEventListener(
+    "change",
+    hitungTotal
+  );
+
+  fasilitas.forEach(function(item){
+
+    item.addEventListener(
+      "change",
+      hitungTotal
+    );
+
+  });
+
+  function hitungTotal(){
+
+    let jumlah =
+      parseInt(jumlahUndangan.value) || 0;
+
+    let hargaMenu =
+      parseInt(paketMenu.value);
+
+    let total =
+      jumlah * hargaMenu;
+
+    fasilitas.forEach(function(item){
+
+      if(item.checked){
+
+        total += parseInt(item.value);
+
+      }
+
+    });
+
+    totalBiaya.value =
+      "Rp " + total.toLocaleString("id-ID");
+
+  }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
